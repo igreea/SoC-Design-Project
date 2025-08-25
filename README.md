@@ -5,15 +5,15 @@ Fixed-kernel 2D convolution accelerator
 
 
 ## 프로젝트 개요
-본 프로젝트에서는 주어진 제약조건에서 Verilog를 통해 3x3 Sobel/Gaussian 커널에 대한 컨볼루션 연산을 수행하는 가속기를 개발하고, 시뮬레이션을 통해 출력 데이터를 검증합니다. 이때, synthesis 및 implementation 과정 중 오류가 발생하지 않아야 하며, RTL simulation 및 post-simulation(implementation)을 통해 얻은 클럭 사이클 및 연산 완료 시간이 최소가 되도록 설계해야 합니다.
+본 프로젝트에서는 주어진 제약조건에서 Verilog를 통해 3x3 Sobel/Gaussian 커널에 대한 컨볼루션 연산을 수행하는 가속기를 개발하고, 시뮬레이션을 통해 출력 데이터를 검증합니다. Synthesis 및 implementation 까지 완료하였으며, RTL simulation 및 post-simulation(implementation)을 통해 얻은 클럭 사이클 수와 연산 시간을 최소화하는 것을 목표로 진행하였습니다.
 
 
 ## 상세 설명
 - **Project 1**: 흑백 이미지 데이터(input.mem)에 대한 x, y 방향 3x3 sobel 커널 컨볼루션 연산 지원
 - **Project 2**: RGB888 이미지 데이터에 대한 3x3 gaussian 커널 컨볼루션 연산 지원
-- **공통**: 입력 이미지 사이즈 30x30, 출력 이미지 사이즈 32x32
+- **공통**: 입력 이미지 사이즈 32x32, 출력 이미지 사이즈 30x30
 - **제약 조건**: 입력 이미지(900픽셀) 데이터는 input.mem에 저장되어 있으며, 한 클럭당 한 픽셀 씩 읽어올 수 있음. 목표 주파수 100MHz
-- **평가**: 정답 데이터(output.mem)을 바탕으로 line-by-line 비교를 통해 올바르게 커널 연산이 수행되었는지 확인
+- **평가**: 정답 데이터(output.mem)를 바탕으로 line-by-line 비교를 통해 올바르게 커널 연산이 수행되었는지 확인
 - **목표 디바이스 / 시뮬레이션 툴**: Xilinx Artix-7 XC7A75T-1 FGG484 / Vivado 2023.2
 
 
