@@ -1,4 +1,3 @@
-# SoC-Design-Project
 Fixed-kernel 2D convolution accelerator  
 ===========================================
 > 2025-1 SoC Design
